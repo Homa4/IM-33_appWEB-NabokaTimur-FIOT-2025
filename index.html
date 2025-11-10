@@ -3,77 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>Modern Web Design Studio</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        
-    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="profile.jpg" alt="Profile Picture" class="profile"> 
-            <div class="about-me">
-                <h1>About me</h1>
-                <div class="skills-table-container">
-                    <table class="skills-table">
-                        <thead>
-                            <tr>
-                                <th>Category</th>
-                                <th>Skills</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="category-column">Frontend</td>
-                                <td>React.js, Next.js, JavaScript (ES6+), HTML5, CSS3, Responsive Design</td>
-                            </tr>
-                            <tr>
-                                <td class="category-column">Backend</td>
-                                <td>Node.js, Express.js, REST API Design</td>
-                            </tr>
-                            <tr>
-                                <td class="category-column">Databases</td>
-                                <td>MongoDB, MySQL</td>
-                            </tr>
-                            <tr>
-                                <td class="category-column">Languages & Scripting</td>
-                                <td>JavaScript, Python, C/C++</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <header>
+        <nav>
+            <h1>WebCraft Studio</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <h2>Creating Digital Experiences</h2>
+            <p>We design and develop modern, responsive websites that help your business thrive in the digital world.</p>
+        </section>
+
+        <section id="services">
+            <article>
+                <h3>Our Services</h3>
+                <p>We offer comprehensive web solutions tailored to your needs. From design to deployment, we've got you covered.</p>
+            </article>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>Web Design</h4>
+                    <p>Beautiful, user-friendly designs that capture your brand's essence and engage your audience.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Development</h4>
+                    <p>Clean, efficient code built with modern technologies for optimal performance and scalability.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Responsive Design</h4>
+                    <p>Websites that look perfect on any device, from smartphones to large desktop screens.</p>
+                </div>
+                <div class="service-card">
+                    <h4>SEO Optimization</h4>
+                    <p>Strategic optimization to help your website rank higher and reach more potential customers.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Maintenance</h4>
+                    <p>Ongoing support and updates to keep your website secure, fast, and running smoothly.</p>
+                </div>
+                <div class="service-card">
+                    <h4>Consulting</h4>
+                    <p>Expert advice on digital strategy, technology choices, and best practices for your project.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="content">
-            <p>My name is Timur, and I am a <strong>third-year Software Engineering student</strong> at the National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute" (KPI). I specialize in full-stack web development, with a strong proficiency in JavaScript, React.js, Node.js, Next.js, Python, Pyrogram, Valorant, MongoDB, and MySQL.</p>
+        <section id="pricing" class="pricing-section">
+            <h3>Pricing Plans</h3>
+            <article>
+                <p>Choose the perfect package for your needs. All plans include ongoing support and maintenance.</p>
+            </article>
 
-            <p>Beyond my technical skills, I am passionate about continuous learning and hands-on creation. In my free time, I enjoy sports and DIY projects, such as crafting jewelry or working on electronic devices through soldering and assembly.</p>
-
-            <p>Main Areas of My Work (bulleted list)</p>
-            <ul>
-                <li>Front-end development</li>
-                <li>Back-end integration</li>
-                <li>Database design</li>
-            </ul>
-
-            <div class="contact-form">
-                <p>Contact me:</p>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Package</th>
+                            <th>Features</th>
+                            <th>Timeline</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Starter</td>
+                            <td>5 pages, responsive design, basic SEO</td>
+                            <td>2-3 weeks</td>
+                            <td class="price">$2,500</td>
+                        </tr>
+                        <tr>
+                            <td>Professional</td>
+                            <td>10 pages, custom design, advanced SEO, CMS</td>
+                            <td>4-6 weeks</td>
+                            <td class="price">$5,000</td>
+                        </tr>
+                        <tr>
+                            <td>Business</td>
+                            <td>15 pages, e-commerce, blog, analytics integration</td>
+                            <td>6-8 weeks</td>
+                            <td class="price">$8,500</td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise</td>
+                            <td>Unlimited pages, custom features, API integration</td>
+                            <td>8-12 weeks</td>
+                            <td class="price">$15,000+</td>
+                        </tr>
+                        <tr>
+                            <td>Maintenance</td>
+                            <td>Monthly updates, security, backups, support</td>
+                            <td>Ongoing</td>
+                            <td class="price">$500/mo</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
+        </section>
 
-        <div class="footer">
-            <a href="#">Link to design doc</a>
+        <section class="gallery" id="portfolio">
+            <h3>Our Portfolio</h3>
+            <div class="gallery-grid">
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80" alt="Web analytics dashboard with charts and graphs">
+                    <figcaption class="gallery-caption">E-Commerce Platform</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=800&h=600&fit=crop&q=80" alt="Modern mobile app design mockup">
+                    <figcaption class="gallery-caption">Mobile App Interface</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80" alt="Business charts and statistics on screen">
+                    <figcaption class="gallery-caption">Corporate Website</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800&h=600&fit=crop&q=80" alt="Creative workspace with design materials">
+                    <figcaption class="gallery-caption">Creative Portfolio</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&q=80" alt="Developer coding on laptop">
+                    <figcaption class="gallery-caption">Custom Web Application</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=800&h=600&fit=crop&q=80" alt="Team working together on project">
+                    <figcaption class="gallery-caption">Startup Landing Page</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="about">
+            <article>
+                <h3>About Us</h3>
+                <p>WebCraft Studio is a team of passionate designers and developers dedicated to creating exceptional web experiences. With over 10 years of combined experience, we've helped hundreds of businesses establish their online presence and achieve their digital goals.</p>
+                <p>We believe in the power of good design and clean code to transform businesses and connect with audiences in meaningful ways.</p>
+            </article>
+
+            <div class="team-section">
+                <h3>Meet Our Team</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&q=80" alt="Portrait of Sarah Johnson, Lead Designer">
+                        <h4>Sarah Johnson</h4>
+                        <p class="role">Lead Designer</p>
+                        <p>Creative visionary with a passion for user-centered design and modern aesthetics.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&q=80" alt="Portrait of Michael Chen, Senior Developer">
+                        <h4>Michael Chen</h4>
+                        <p class="role">Senior Developer</p>
+                        <p>Full-stack expert specializing in building scalable and performant web applications.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&q=80" alt="Portrait of Emily Rodriguez, UX Specialist">
+                        <h4>Emily Rodriguez</h4>
+                        <p class="role">UX Specialist</p>
+                        <p>Data-driven designer focused on creating intuitive and delightful user experiences.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300&h=300&fit=crop&q=80" alt="Portrait of David Kim, Project Manager">
+                        <h4>David Kim</h4>
+                        <p class="role">Project Manager</p>
+                        <p>Ensuring smooth project delivery and maintaining strong client relationships.</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside>
+                <h3>Why Choose Us?</h3>
+                <ul>
+                    <li>Client-focused approach with personalized solutions</li>
+                    <li>Cutting-edge technologies and best practices</li>
+                    <li>Fast turnaround times without compromising quality</li>
+                    <li>Transparent communication throughout the project</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section id="contact">
+            <article>
+                <h3>Get In Touch</h3>
+                <p>Ready to start your next project? We'd love to hear from you. Contact us today for a free consultation.</p>
+            </article>
+        </section>
+
+        <section id="contact">
+            <article>
+                <h3>Get In Touch</h3>
+                <p>Ready to start your next project? We'd love to hear from you. Contact us today for a free consultation.</p>
+            </article>
+
+            <form class="contact-form" action="/submit-form" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Interested In *</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Select a service --</option>
+                        <option value="web-design">Web Design</option>
+                        <option value="development">Development</option>
+                        <option value="responsive-design">Responsive Design</option>
+                        <option value="seo">SEO Optimization</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="consulting">Consulting</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Budget Range</label>
+                    <select id="budget" name="budget">
+                        <option value="">-- Select budget range --</option>
+                        <option value="starter">$2,000 - $3,000 (Starter)</option>
+                        <option value="professional">$4,000 - $6,000 (Professional)</option>
+                        <option value="business">$7,000 - $10,000 (Business)</option>
+                        <option value="enterprise">$10,000+ (Enterprise)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Project Details *</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project..."></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                    <label for="newsletter">Subscribe to our newsletter for web design tips and updates</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 WebCraft Studio. All rights reserved.</p>
+        <div class="contact-info">
+            <p>Email: hello@webcraft.studio</p>
+            <p>Phone: +1 (555) 123-4567</p>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
