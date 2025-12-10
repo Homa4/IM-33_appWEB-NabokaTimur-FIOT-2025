@@ -10,6 +10,8 @@ body {
     color: #333;
 }
 
+/* ===== HEADER & NAV ===== */
+
 header {
     background: linear-gradient(135deg, #4F7C82 0%, #0B2E33 100%);
     color: white;
@@ -27,27 +29,68 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    gap: 1rem;
 }
 
 nav h1 {
     font-size: 1.5rem;
 }
 
-nav ul {
+/* Навігаційні посилання */
+
+.nav-links {
     list-style: none;
     display: flex;
     gap: 2rem;
 }
 
-nav a {
+.nav-links a {
     color: white;
     text-decoration: none;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
-nav a:hover {
-    opacity: 0.8;
+.nav-links a:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
 }
+
+/* Бургер-кнопка */
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-toggle span+span {
+    margin-top: 5px;
+}
+
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ===== MAIN LAYOUT ===== */
 
 main {
     max-width: 1200px;
@@ -59,12 +102,15 @@ section {
     margin-bottom: 4rem;
 }
 
+/* ===== HERO ===== */
+
 .hero {
     text-align: center;
     padding: 4rem 2rem;
     background: linear-gradient(135deg, #B8E3E9 0%, #93B1B5 100%);
     border-radius: 10px;
     margin-bottom: 3rem;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .hero h2 {
@@ -80,6 +126,8 @@ section {
     margin: 0 auto;
 }
 
+/* ===== ARTICLES ===== */
+
 article {
     background: white;
     padding: 2rem;
@@ -94,6 +142,8 @@ article h3 {
     font-size: 1.8rem;
 }
 
+/* ===== SERVICES GRID ===== */
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -106,18 +156,21 @@ article h3 {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    background: #F4FAFB;
 }
 
 .service-card h4 {
     color: #0B2E33;
     margin-bottom: 1rem;
 }
+
+/* ===== PRICING TABLE ===== */
 
 .pricing-section {
     margin: 3rem 0;
@@ -185,6 +238,8 @@ td:first-child {
     color: #0B2E33;
 }
 
+/* ===== GALLERY ===== */
+
 .gallery {
     margin: 3rem 0;
 }
@@ -208,6 +263,7 @@ td:first-child {
     border-radius: 8px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .gallery-item:hover {
@@ -227,6 +283,8 @@ td:first-child {
     padding: 1rem;
     text-align: center;
 }
+
+/* ===== TEAM SECTION ===== */
 
 .team-section {
     margin: 4rem 0;
@@ -251,11 +309,12 @@ td:first-child {
     padding: 2rem;
     text-align: center;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .team-member:hover {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
 }
 
 .team-member img {
@@ -278,6 +337,8 @@ td:first-child {
     margin-bottom: 1rem;
 }
 
+/* ===== ASIDE ===== */
+
 aside {
     background: #B8E3E9;
     padding: 2rem;
@@ -285,29 +346,7 @@ aside {
     border-left: 4px solid #4F7C82;
 }
 
-aside h3 {
-    color: #0B2E33;
-    margin-bottom: 1rem;
-}
-
-footer {
-    background: #0B2E33;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
-}
-
-footer p {
-    margin-bottom: 0.5rem;
-}
-
-#contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
-}
+/* ===== CONTACT FORM ===== */
 
 .contact-form {
     background: white;
@@ -320,6 +359,7 @@ footer p {
 
 .form-group {
     margin-bottom: 1.5rem;
+    position: relative;
 }
 
 .form-group label {
@@ -383,6 +423,32 @@ footer p {
     cursor: pointer;
 }
 
+/* Помилки валідації */
+
+.error-message {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #b00020;
+    min-height: 1em;
+}
+
+.form-group.invalid input,
+.form-group.invalid select,
+.form-group.invalid textarea {
+    border-color: #b00020;
+    box-shadow: 0 0 0 3px rgba(176, 0, 32, 0.1);
+}
+
+/* Статус форми */
+
+.form-status {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #0B2E33;
+}
+
+/* Кнопка */
+
 .submit-btn {
     background: linear-gradient(135deg, #4F7C82 0%, #0B2E33 100%);
     color: white;
@@ -392,18 +458,21 @@ footer p {
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
     width: 100%;
 }
 
 .submit-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(79, 124, 130, 0.3);
+    opacity: 0.95;
 }
 
 .submit-btn:active {
     transform: translateY(0);
 }
+
+/* ===== FOOTER ===== */
 
 footer {
     background: #0B2E33;
@@ -424,16 +493,59 @@ footer p {
     margin-top: 1rem;
 }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 1rem;
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
 
-    nav ul {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+@media (max-width: 1024px) {
+    main {
+        padding: 1.5rem;
+    }
+}
+
+/* Для планшетів і мобільних */
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0 1rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #4F7C82 0%, #0B2E33 100%);
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
-        text-align: center;
+        padding: 1rem 0 1.5rem;
+        transform: translateY(-20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .hero h2 {
@@ -475,6 +587,8 @@ footer p {
     }
 }
 
+/* Дуже маленькі екрани */
+
 @media (max-width: 480px) {
     nav h1 {
         font-size: 1.2rem;
@@ -512,6 +626,8 @@ footer p {
         font-size: 0.85rem;
     }
 }
+
+/* Дуже широкі екрани */
 
 @media (min-width: 1400px) {
     main {
