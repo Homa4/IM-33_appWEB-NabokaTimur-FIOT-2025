@@ -10,7 +10,8 @@ body {
     color: #333;
 }
 
-/* ===== HEADER & NAV ===== */
+
+
 
 header {
     background: linear-gradient(135deg, #4F7C82 0%, #0B2E33 100%);
@@ -36,7 +37,7 @@ nav h1 {
     font-size: 1.5rem;
 }
 
-/* Навігаційні посилання */
+
 
 .nav-links {
     list-style: none;
@@ -55,7 +56,7 @@ nav h1 {
     transform: translateY(-1px);
 }
 
-/* Бургер-кнопка */
+
 
 .nav-toggle {
     display: none;
@@ -90,7 +91,7 @@ nav h1 {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ===== MAIN LAYOUT ===== */
+
 
 main {
     max-width: 1200px;
@@ -102,7 +103,7 @@ section {
     margin-bottom: 4rem;
 }
 
-/* ===== HERO ===== */
+
 
 .hero {
     text-align: center;
@@ -126,7 +127,7 @@ section {
     margin: 0 auto;
 }
 
-/* ===== ARTICLES ===== */
+
 
 article {
     background: white;
@@ -142,7 +143,7 @@ article h3 {
     font-size: 1.8rem;
 }
 
-/* ===== SERVICES GRID ===== */
+
 
 .services-grid {
     display: grid;
@@ -170,7 +171,7 @@ article h3 {
     margin-bottom: 1rem;
 }
 
-/* ===== PRICING TABLE ===== */
+
 
 .pricing-section {
     margin: 3rem 0;
@@ -238,7 +239,7 @@ td:first-child {
     color: #0B2E33;
 }
 
-/* ===== GALLERY ===== */
+
 
 .gallery {
     margin: 3rem 0;
@@ -284,7 +285,7 @@ td:first-child {
     text-align: center;
 }
 
-/* ===== TEAM SECTION ===== */
+
 
 .team-section {
     margin: 4rem 0;
@@ -337,7 +338,7 @@ td:first-child {
     margin-bottom: 1rem;
 }
 
-/* ===== ASIDE ===== */
+
 
 aside {
     background: #B8E3E9;
@@ -346,7 +347,7 @@ aside {
     border-left: 4px solid #4F7C82;
 }
 
-/* ===== CONTACT FORM ===== */
+
 
 .contact-form {
     background: white;
@@ -423,7 +424,47 @@ aside {
     cursor: pointer;
 }
 
-/* Помилки валідації */
+
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.popup.show {
+    display: flex;
+}
+
+.popup-content {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.popup-close {
+    margin-top: 15px;
+    padding: 5px 15px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    background: #0056b3;
+}
+
+
+
 
 .error-message {
     margin-top: 0.25rem;
@@ -439,7 +480,7 @@ aside {
     box-shadow: 0 0 0 3px rgba(176, 0, 32, 0.1);
 }
 
-/* Статус форми */
+
 
 .form-status {
     margin-top: 1rem;
@@ -447,7 +488,7 @@ aside {
     color: #0B2E33;
 }
 
-/* Кнопка */
+
 
 .submit-btn {
     background: linear-gradient(135deg, #4F7C82 0%, #0B2E33 100%);
@@ -472,7 +513,7 @@ aside {
     transform: translateY(0);
 }
 
-/* ===== FOOTER ===== */
+
 
 footer {
     background: #0B2E33;
@@ -493,7 +534,7 @@ footer p {
     margin-top: 1rem;
 }
 
-/* ===== ANIMATIONS ===== */
+
 
 @keyframes fadeInUp {
     from {
@@ -507,7 +548,7 @@ footer p {
     }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+
 
 @media (max-width: 1024px) {
     main {
@@ -515,7 +556,7 @@ footer p {
     }
 }
 
-/* Для планшетів і мобільних */
+
 
 @media (max-width: 768px) {
     nav {
@@ -587,7 +628,7 @@ footer p {
     }
 }
 
-/* Дуже маленькі екрани */
+
 
 @media (max-width: 480px) {
     nav h1 {
@@ -627,7 +668,7 @@ footer p {
     }
 }
 
-/* Дуже широкі екрани */
+
 
 @media (min-width: 1400px) {
     main {

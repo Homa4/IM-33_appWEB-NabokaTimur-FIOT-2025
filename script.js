@@ -1,100 +1,91 @@
-document.addEventListener("DOMContentLoaded", () => {
-  /* ===== БУРГЕР-МЕНЮ ===== */
-  const navToggle = document.querySelector(".nav-toggle");
-  const navLinks = document.querySelector(".nav-links");
+document.addEventListener("DOMContentLoaded", function () {
+  const navBtn = document.querySelector(".nav-toggle");
+  const navMenu = document.querySelector(".nav-links");
 
-  if (navToggle && navLinks) {
-    navToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      navToggle.classList.toggle("open", isOpen);
-      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
+  if (navBtn && navMenu) {
+    navBtn.onclick = function () {
+      navMenu.classList.toggle("open");
+    };
 
-    // Закриття меню при кліку по пункту
-    navLinks.querySelectorAll("a[href^='#']").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        navToggle.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-      });
+    const links = navMenu.querySelectorAll("a");
+    links.forEach(function (link) {
+      link.onclick = function () {
+        navMenu.classList.remove("open");
+      };
     });
   }
 
-  /* ===== ПЛАВНИЙ СКРОЛ ДО ЯКОРІВ ===== */
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", (e) => {
-      const targetId = anchor.getAttribute("href");
-      if (!targetId || targetId === "#") return;
-
-      const targetElement = document.querySelector(targetId);
-      if (!targetElement) return;
+  const anchors = document.querySelectorAll('a[href^="#"]');
+  anchors.forEach(function (item) {
+    item.onclick = function (e) {
+      const hash = this.getAttribute("href");
+      const target = document.querySelector(hash);
+      if (!target) return;
 
       e.preventDefault();
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    });
+      target.scrollIntoView({ behavior: "smooth" });
+    };
   });
 
-  /* ===== ПРОСТА ВАЛІДАЦІЯ ФОРМИ ===== */
   const form = document.querySelector(".contact-form");
-  if (form) {
-    const requiredFields = ["name", "email", "service", "message"];
-    const statusEl = form.querySelector(".form-status");
+  const status = document.querySelector(".form-status");
 
-    form.addEventListener("submit", (e) => {
-      let isValid = true;
+  const popup = document.querySelector(".popup");
+  const popupBtn = document.querySelector(".popup-close");
 
-      requiredFields.forEach((fieldName) => {
-        const field = form.querySelector(`[name="${fieldName}"]`);
-        const group = field?.closest(".form-group");
-        const error = form.querySelector(
-          `.error-message[data-for="${fieldName}"]`
-        );
-
-        if (!field || !group || !error) return;
-
-        group.classList.remove("invalid");
-        error.textContent = "";
-
-        const value = field.value.trim();
-
-        if (!value) {
-          isValid = false;
-          group.classList.add("invalid");
-          error.textContent = "This field is required.";
-          return;
-        }
-
-        if (fieldName === "email" && !isValidEmail(value)) {
-          isValid = false;
-          group.classList.add("invalid");
-          error.textContent = "Please enter a valid email address.";
-        }
-      });
-
-      if (!isValid) {
-        e.preventDefault();
-        if (statusEl) {
-          statusEl.textContent =
-            "Please correct the highlighted fields and try again.";
-        }
-        return;
-      }
-
-      // Імітація успішної відправки форми (без реального бекенду)
-      e.preventDefault();
-      if (statusEl) {
-        statusEl.textContent =
-          "Your message has been sent successfully (demo mode).";
-      }
-      form.reset();
-    });
+  function showPopup() {
+    popup.classList.add("show");
+  }
+  if (popupBtn) {
+    popupBtn.onclick = function () {
+      popup.classList.remove("show");
+    };
   }
 
-  function isValidEmail(email) {
-    // Дуже проста перевірка формату email
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  function saveToStorage() {
+    localStorage.setItem(
+      "contactData",
+      JSON.stringify({
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        service: form.service.value,
+        budget: form.budget.value,
+        message: form.message.value,
+      })
+    );
+  }
+
+  function loadFromStorage() {
+    const saved = localStorage.getItem("contactData");
+    if (!saved) return;
+
+    const data = JSON.parse(saved);
+    form.name.value = data.name || "";
+    form.email.value = data.email || "";
+    form.phone.value = data.phone || "";
+    form.service.value = data.service || "";
+    form.budget.value = data.budget || "";
+    form.message.value = data.message || "";
+  }
+
+  if (form) {
+    loadFromStorage();
+
+    form.oninput = saveToStorage;
+
+    form.onsubmit = function () {
+      console.log("📩 Form data saved:", localStorage.getItem("contactData"));
+
+      if (status) {
+        status.textContent = "";
+      }
+
+      showPopup();
+      form.reset();
+      localStorage.removeItem("contactData");
+
+      return false;
+    };
   }
 });

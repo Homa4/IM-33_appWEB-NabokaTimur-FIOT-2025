@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modern Web Design Studio</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Modern Web Design Studio</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
+        <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -251,7 +252,7 @@
 
                 <div class="form-group">
                     <label for="message">Project Details *</label>
-                    <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project..."></textarea>
+                    <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..."></textarea>
                     <p class="error-message" data-for="message"></p>
                 </div>
 
@@ -274,6 +275,13 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <div class="popup">
+  <div class="popup-content">
+    <p>Ваше повідомлення успішно надіслано!</p>
+    <button class="popup-close">OK</button>
+  </div>
+</div>
+
+
 </body>
 </html>
